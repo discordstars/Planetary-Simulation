@@ -140,9 +140,10 @@ function draw () {
         ctx.fill();
 
         // Label it.
+        let dist = Math.sqrt(body.px ** 2 + body.py ** 2) / AU;
         ctx.font = "14px Operator Mono";
         ctx.fillText(
-            `${body.name}: ${(body.mass / bodies[1].mass).toLocaleString()}M⊕ @ ${(center_x-x).toLocaleString()};${(center_y-y).toLocaleString()}`,
+            `${body.name}: ~${(body.mass / bodies[1].mass).toLocaleString()}M⊕ at ~${(dist).toLocaleString()}AU`,
             x + body.size * SCALE_SIZE + 5,
             y
         );
